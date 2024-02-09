@@ -8,18 +8,18 @@ with open(os.path.join(this_directory, 'README.md')) as f:
     long_description = f.read()
 
 about = {}
-with open(os.path.join(here, 'eospy', '__version__.py'), 'r') as f:
+with open(os.path.join(here, 'eospyabi', '__version__.py'), 'r') as f:
     exec(f.read(), about)
 
 setup(
-    name='libeospy',
+    name='eospyabi',
     version=os.getenv('BUILD_VERSION', about['__version__']),
     description='Python library for the eos.io REST API',
     long_description=long_description,
     long_description_content_type='text/markdown',
     author='deck',
     author_email='deck@eosnewyork.io',
-    url='https://github.com/eosnewyork/eospy',
+    url='https://github.com/MajicGit/eospyABI',
     packages=find_packages(),
     test_suite='nose.collector',
     install_requires=[
@@ -30,11 +30,12 @@ setup(
         'pytz',
         'six',
         'pyyaml',
+        'antelopy'
     ],
     entry_points={
         'console_scripts': [
-            'validate_chain = eospy.command_line:validate_chain',
-            'pycleos = eospy.command_line:cleos',
-            'pytesteos = eospy.command_line:testeos',
+            'validate_chain = eospyabi.command_line:validate_chain',
+            'pycleos = eospyabi.command_line:cleos',
+            'pytesteos = eospyabi.command_line:testeos',
         ],
     })

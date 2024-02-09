@@ -1,8 +1,8 @@
 import sys
 
-sys.path.append('../eospy')
+sys.path.append('../eospyabi')
 
-from eospy.cleos import EOSKey
+from eospyabi.cleos import EOSKey
 import hashlib
 
 

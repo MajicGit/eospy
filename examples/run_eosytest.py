@@ -1,5 +1,5 @@
 import os
-from eospy import testeos
+from eospyabi import testeos
 
 
 cwd = os.path.dirname(os.path.realpath(__file__))

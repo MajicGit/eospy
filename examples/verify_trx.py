@@ -1,4 +1,4 @@
-from eospy.cleos import EOSKey
+from eospyabi.cleos import EOSKey
 import binascii
 
 # public key EOS6MRyAjQq8ud7hVNYcfnVPJqcVpscN5So8BhtHuGYqET5GDW5CV

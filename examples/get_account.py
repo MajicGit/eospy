@@ -1,4 +1,4 @@
-from eospy.cleos import Cleos
+from eospyabi.cleos import Cleos
 
 ce = Cleos(url='https://api.eosargentina.io')
 

@@ -2,5 +2,5 @@
 *bak
 dist/
 build/
-libeospy.egg-info
+eospyabi.egg-info
 .vscode/

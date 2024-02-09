@@ -1,8 +1,8 @@
 import datetime as dt
-import eospy.cleos
-import eospy.keys
-from eospy.types import Abi, Action
-from eospy.utils import parse_key_file
+import eospyabi.cleos
+import eospyabi.keys
+from eospyabi.types import Abi, Action
+from eospyabi.utils import parse_key_file
 import os
 import pytz
 import json
@@ -10,7 +10,7 @@ import json
 # this url is to a testnet that may or may not be working.
 # We suggest using a different testnet such as kylin or jungle
 #
-ce = eospy.cleos.Cleos(url='http://api.pennstation.eosnewyork.io:7001')
+ce = eospyabi.cleos.Cleos(url='http://api.pennstation.eosnewyork.io:7001')
 
 arguments = {
     "from": "eosio",  # sender
@@ -37,7 +37,7 @@ trx['expiration'] = str(
 # use a string or EOSKey for push_transaction
 # key = "5KQwrPbwdL6PhXujxW37FSSQZ1JiwsST4cqQzDeyXtP79zkvFD3"
 # use EOSKey:
-key = eospy.keys.EOSKey('5KQwrPbwdL6PhXujxW37FSSQZ1JiwsST4cqQzDeyXtP79zkvFD3')
+key = eospyabi.keys.EOSKey('5KQwrPbwdL6PhXujxW37FSSQZ1JiwsST4cqQzDeyXtP79zkvFD3')
 resp = ce.push_transaction(trx, key, broadcast=True)
 print('------------------------------------------------')
 print(resp)
@@ -74,7 +74,7 @@ with open(abi_file) as rf:
     # final transaction formed
     trx = {"actions": [payload]}
 
-    resp = ce.push_transaction(trx, eospy.keys.EOSKey(key), broadcast=True)
+    resp = ce.push_transaction(trx, eospyabi.keys.EOSKey(key), broadcast=True)
     print('------------------------------------------------')
     print(resp)
     print('------------------------------------------------')
@@ -120,7 +120,7 @@ with open(abi_file) as rf:
     # final transaction formed
     trx = {"actions": [vote_payload]}
 
-    resp = ce.push_transaction(trx, eospy.keys.EOSKey(key), broadcast=True)
+    resp = ce.push_transaction(trx, eospyabi.keys.EOSKey(key), broadcast=True)
     print('------------------------------------------------')
     print(resp)
     print('------------------------------------------------')

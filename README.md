@@ -1,4 +1,8 @@
-# eospy library
+# eospyabi library
+Updated version of eospy to no longer rely on API calls to serialize data. Integrates https://github.com/stuckatsixpm/antelopy to serialize instead.
+Should be usable as a drop-in replacement.
+
+## eospy readme:
 
 This library is still a work in progress but currently has the ability to perform all `cleos get` functions without compiling the code.
 
@@ -38,16 +42,7 @@ This library is very much a work in progress.
 ### Linux
 
 ```
-# create virtual environment
-mkdir -p ~/envs/eospy
-virtualenv ~/envs/eospy
-# activate the environment
-source ~/envs/eospy/bin/activate
-# install from github
-# look [here](https://github.com/eosnewyork/eospy/releases) for the latest release.
-pip install git+https://github.com/eosnewyork/eospy.git@<release>
-# install the library from pip
-pip install libeospy
+pip install eospyabi
 ```
 
 ### Windows
@@ -55,20 +50,14 @@ pip install libeospy
 1. Install python
    You can use either Python 2.7 or 3.7 however we suggest python 3.7 as we have tested that version more thoroughly.
    https://www.howtogeek.com/197947/how-to-install-python-on-windows/
-   [Python 2.7](https://www.python.org/downloads/release/python-2715/)
    [Python 3.7](https://www.python.org/downloads/release/python-370/)
 
 2. Install git
    https://www.atlassian.com/git/tutorials/install-git
 
-3. Install eospy. Look [here](https://github.com/eosnewyork/eospy/releases) for the latest release number.
-
 ```
-# install from github
-# pip install git+https://github.com/eosnewyork/eospy.git@<release>
-pip install git+https://github.com/eosnewyork/eospy.git@v1.1.8
 # install from pip
-pip install libeospy
+pip install eospyabi
 ```
 
 ## API Endpoints

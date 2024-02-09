@@ -1,5 +1,5 @@
-from eospy.types import Abi
-from eospy.cleos import Cleos
+from eospyabi.types import Abi
+from eospyabi.cleos import Cleos
 
 system_accounts = ['eosio', 'eosio.token', 'eosio.msig', 'eosio.wrap']
 

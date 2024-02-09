@@ -256,7 +256,7 @@ class Cleos:
             # Fetch the ABI first
             abicache.chain.endpoint = self._prod_url
             abicache.read_abi(code)
-        return {"binargs": abicache.serialize_data(code, action, args)}
+        return {"binargs": abicache.serialize_data(code, action, args).decode()}
 
     #####
     # create keys

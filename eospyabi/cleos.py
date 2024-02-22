@@ -16,7 +16,7 @@ from binascii import hexlify
 from antelopy import AbiCache
 from antelopy.types.abi import Abi
 
-abicache = AbiCache(chain_endpoint="")
+abicache = None
 
 
 class Cleos:
@@ -251,9 +251,12 @@ class Cleos:
         return self.post('chain.abi_bin_to_json', params=None, json=json, timeout=timeout)
 
     def abi_json_to_bin(self, code, action, args, timeout=30, use_stored = True):
+        global abicache
         ''' '''
         if not use_stored or code not in abicache._abi_cache:
             # Fetch the ABI first
+            if abicache is None:
+                abicache =  AbiCache(chain_endpoint=self._prod_url)
             abicache.chain.endpoint = self._prod_url
             abicache.read_abi(code)
         return {"binargs": abicache.serialize_data(code, action, args).decode()}

@@ -17,8 +17,7 @@ setup(
     description='Python library for the eos.io REST API',
     long_description=long_description,
     long_description_content_type='text/markdown',
-    author='deck',
-    author_email='deck@eosnewyork.io',
+    author='MajicGit',
     url='https://github.com/MajicGit/eospyABI',
     packages=find_packages(),
     test_suite='nose.collector',
@@ -30,7 +29,7 @@ setup(
         'pytz',
         'six',
         'pyyaml',
-        'antelopy'
+        'antelopy==0.2.0'
     ],
     entry_points={
         'console_scripts': [
